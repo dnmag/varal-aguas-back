@@ -51,7 +51,14 @@ $config = [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'pluralize' => false, 'controller' => 'colaborador'],
+                [
+                    'class' => 'yii\rest\UrlRule', 
+                    'pluralize' => false, 
+                    'controller' => 'colaborador',
+                    'extraPatterns' => [
+                        'POST' => 'create-new',
+                    ],
+                ],
             ],
         ],
     ],
