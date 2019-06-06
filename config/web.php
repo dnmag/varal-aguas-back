@@ -5,6 +5,10 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'varal-aguas',
+    'language' => 'pt-BR',
+    'charset' => 'UTF-8',
+    'name' => 'Varal das Águas - API',
+    'timeZone' => 'America/Bahia',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
