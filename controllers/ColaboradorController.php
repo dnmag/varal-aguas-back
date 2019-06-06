@@ -11,25 +11,62 @@ class ColaboradorController extends ActiveController {
 
     public $modelClass = 'app\models\Colaborador';
 
+    public static function allowedDomains() {
+        return [
+             '*',                        // star allows all domains
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors() {
+        return array_merge(parent::behaviors(), [
+            // For cross-domain AJAX request
+            'corsFilter' => [
+                'class' => \yii\filters\Cors::className(),
+                'cors' => [
+                    // restrict access to domains:
+                    'Origin' => static::allowedDomains(),
+                    'Access-Control-Request-Method' => ['POST'],
+                    'Access-Control-Allow-Credentials' => false,
+                    'Access-Control-Max-Age' => 3600, // Cache (seconds)
+                ],
+            ],
+        ]);
+    }
+
     public function actionCreateNew() {
 
         $model = new Colaborador();
-        $model->load(Yii::$app->request->post(),'');
+        $model->load(Yii::$app->request->post(), '');
 
         $imgFile = UploadedFile::getInstanceByName('imageFile');
         if ($imgFile != null) {
             $model->imageFile = $imgFile;
-            $model->foto = date('YmdHis-') . $model->imageFile->name;
+            $model->foto = date('YmdHis-') . substr($model->imageFile->name, 0, 5);
             if ($model->validate()) {
-                $model->save();
+                if($model->termos){
+                    $model->save();
+                } else{
+                    return ['model'=> null,
+                            'error'=> ['termos'=>'É necessário aceitar os termos!'],
+                            'status'=> false];
+                }
                 $model->imageFile->saveAs(Yii::getAlias('@webroot/uploads/' . $model->foto));
-                return $model;
+                return ['model'=> $model,
+                        'error'=> null,
+                        'status'=> true];
             } else {
-                return $model->errors;
+                return ['model'=> null,
+                        'error'=> $model->errors,
+                        'status'=> false];
             }
         } else {
             $model->validate();
-            return $model->errors;
+            return ['model'=> null,
+                    'error'=> $model->errors,
+                    'status'=> false];
         }
     }
 
