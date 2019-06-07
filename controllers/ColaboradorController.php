@@ -44,7 +44,7 @@ class ColaboradorController extends ActiveController {
         $imgFile = UploadedFile::getInstanceByName('imageFile');
         if ($imgFile != null) {
             $model->imageFile = $imgFile;
-            $model->foto = date('YmdHis-') . substr($model->imageFile->name, 0, 5) . $model->imageFile->extension;
+            $model->foto = date('YmdHis-') . substr($model->imageFile->name, 0, 5) . '.' . $model->imageFile->extension;
             if ($model->validate()) {
                 if($model->termos){
                     $model->save();
