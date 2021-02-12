@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "colaborador".
+ * This is the model class for table "participante".
  *
  * @property int $id
  * @property string $nome
@@ -15,17 +15,17 @@ use Yii;
  * @property string $foto
  * @property bool $termos
  */
-class Colaborador extends \yii\db\ActiveRecord
+class Participante extends \yii\db\ActiveRecord
 {
     public $img_base64;
 
-    
+
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'colaborador';
+        return 'participante';
     }
 
     /**

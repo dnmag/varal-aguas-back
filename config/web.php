@@ -58,7 +58,7 @@ $config = [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'pluralize' => false,
-                    'controller' => 'colaborador',
+                    'controller' => 'participante',
                     'extraPatterns' => [
                         'POST' => 'create-new',
                     ],

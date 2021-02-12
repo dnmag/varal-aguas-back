@@ -47,7 +47,7 @@ $this->registerCss("
     <div class="row">
         <div class="participante-container">
 
-            <?php foreach ($colaboradores as $c) : ?>
+            <?php foreach ($participantes as $c) : ?>
                 <div class="participante">
                     <div style="width: 50%;">
                         <div class="col-md-12"><b>Nome: </b><?= $c->nome ?></div>

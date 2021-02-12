@@ -6,7 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\Colaborador;
+use app\models\Participante;
 
 class SiteController extends Controller
 {
@@ -59,7 +59,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index', ['colaboradores' => Colaborador::find()->orderBy('id')->all()]);
+        return $this->render('index', ['participantes' => Participante::find()->orderBy('id')->all()]);
     }
 
     /**

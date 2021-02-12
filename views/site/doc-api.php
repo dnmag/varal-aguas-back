@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-about">
   <h1><?= Html::encode($this->title) ?></h1>
 
-  <p><strong>GET</strong> <code>/colaborador</code> <em>responseBody</em></p>
+  <p><strong>GET</strong> <code>/participante</code> <em>responseBody</em></p>
 
   <div class="highlight highlight-source-json">
     <pre>[
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ]</pre>
   </div>
   <br />
-  <p><strong>POST</strong> <code>/colaborador</code> <em>requestBody</em></p>
+  <p><strong>POST</strong> <code>/participante</code> <em>requestBody</em></p>
 
   <div class="highlight highlight-source-json">
     <pre>{

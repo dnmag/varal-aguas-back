@@ -3,16 +3,16 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%colaborador}}`.
+ * Handles the creation of table `{{%participante}}`.
  */
-class m190605_000137_create_colaborador_table extends Migration
+class m210212_174750_create_participante_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('colaborador', [
+        $this->createTable('{{%participante}}', [
             'id' => $this->primaryKey(),
             'nome' => $this->string(50)->notNull(),
             'local_foto' => $this->string(50)->notNull(),
@@ -28,6 +28,6 @@ class m190605_000137_create_colaborador_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('colaborador');
+        $this->dropTable('{{%participante}}');
     }
 }

@@ -7,8 +7,6 @@
 3. Composer
 4. Driver do PostgreSQL para PHP
 
-
-
 #### Docker
 
 1 - Na pasta raiz do projeto, abra o terminal e execute os comandos abaixo para inicializar os containers:
@@ -26,10 +24,8 @@ docker-compose exec php ./yii migrate --interactive=0
 ```
 
 ```bash
-docker-compose exec php chmod 777 -R web/uploads/
+docker-compose exec php chmod 777 -R web/
 ```
-
-
 
 #### Local
 
@@ -47,7 +43,7 @@ composer install
 
 2. Abra o arquivo 'config/db.php' e insira o 'host', 'username', e 'password' do seu banco
 
-3. Na pasta raiz do projeto abra o terminal, e execute o seguinte comando: 
+3. Na pasta raiz do projeto abra o terminal, e execute o seguinte comando:
 
    ```bash
    ./yii migrate
@@ -67,11 +63,9 @@ Após ter realizado os passos anteriores, basta abrir o terminal na pasta raiz d
 
 Obs: A API será iniciada em modo dev, na porta 8080, apenas para testes.
 
-
-
 ### Estrutura de dados da API
 
-**GET** `/colaborador` *responseBody*
+**GET** `/participante` _responseBody_
 
 ```json
 [
@@ -87,9 +81,7 @@ Obs: A API será iniciada em modo dev, na porta 8080, apenas para testes.
 ]
 ```
 
-
-
-**POST** `/colaborador` *requestBody*
+**POST** `/participante` _requestBody_
 
 ```json
 {
@@ -101,4 +93,3 @@ Obs: A API será iniciada em modo dev, na porta 8080, apenas para testes.
   "termos": bool
 }
 ```
-
