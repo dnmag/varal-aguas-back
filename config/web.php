@@ -52,17 +52,18 @@ $config = [
         'db' => $db,
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'enableStrictParsing' => true,
+            'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
                 [
-                    'class' => 'yii\rest\UrlRule', 
-                    'pluralize' => false, 
+                    'class' => 'yii\rest\UrlRule',
+                    'pluralize' => false,
                     'controller' => 'colaborador',
                     'extraPatterns' => [
                         'POST' => 'create-new',
                     ],
                 ],
+                '<alias:\w+>' => 'site/<alias>',
             ],
         ],
     ],
