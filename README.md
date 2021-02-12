@@ -17,15 +17,15 @@
 docker-compose up -d
 ```
 
-```
+```bash
 docker-compose exec php composer install
 ```
 
-```
-docker-compose exec php ./yii migrate
+```bash
+docker-compose exec php ./yii migrate --interactive=0
 ```
 
-```
+```bash
 docker-compose exec php chmod 777 -R web/uploads/
 ```
 
