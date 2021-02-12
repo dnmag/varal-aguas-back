@@ -6,4 +6,11 @@ services:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
     ports:
-      - '8000:80'
+      - '8080:80'
+    depends_on: 
+      - db
+  db: 
+    image: postgres:9.6.20
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: varal_aguas
