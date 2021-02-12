@@ -66,3 +66,39 @@ Após ter realizado os passos anteriores, basta abrir o terminal na pasta raiz d
 ```
 
 Obs: A API será iniciada em modo dev, na porta 8080, apenas para testes.
+
+
+
+### Estrutura de dados da API
+
+**GET** `/colaborador` *responseBody*
+
+```json
+[
+  {
+    "id": int,
+    "nome": "string",
+    "local_foto": "string",
+    "nome_foto": "string",
+    "data_foto": "date string ISO-8601",
+    "foto": "string file name in server",
+    "termos": bool
+  }
+]
+```
+
+
+
+**POST** `/colaborador` *requestBody*
+
+```json
+{
+  "nome": "string",
+  "local_foto": "string",
+  "nome_foto": "string",
+  "data_foto": "date string ISO-8601",
+  "img_base64": "base64 string - non dataURL",
+  "termos": bool
+}
+```
+
