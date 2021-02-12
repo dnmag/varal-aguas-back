@@ -7,6 +7,32 @@
 3. Composer
 4. Driver do PostgreSQL para PHP
 
+
+
+#### Docker
+
+1 - Na pasta raiz do projeto, abra o terminal e execute os comandos abaixo para inicializar os containers:
+
+```bash
+docker-compose up -d
+```
+
+```
+docker-compose exec php composer install
+```
+
+```
+docker-compose exec php ./yii migrate
+```
+
+```
+docker-compose exec php chmod 777 -R web/uploads/
+```
+
+
+
+#### Local
+
 ##### Resolvendo as dependências
 
 1 - Na pasta raiz do projeto, abra o terminal e execute o comando abaixo para realizar o download das dependências:
@@ -17,7 +43,7 @@ composer install
 
 ##### Criação da Base de Dados, e conexão
 
-1. Crie uma base de dados no ProstgreSQL, e dê o nome de 'varal-aguas'
+1. Crie uma base de dados no ProstgreSQL, e dê o nome de 'varal_aguas'
 
 2. Abra o arquivo 'config/db.php' e insira o 'host', 'username', e 'password' do seu banco
 
