@@ -3,7 +3,6 @@
 namespace app\models;
 
 use Yii;
-use \yii\web\UploadedFile;
 
 /**
  * This is the model class for table "colaborador".
@@ -18,10 +17,7 @@ use \yii\web\UploadedFile;
  */
 class Colaborador extends \yii\db\ActiveRecord
 {
-    /**
-     * @var UploadedFile
-     */
-    public $imageFile;
+    public $img_base64;
 
     
     /**
@@ -42,7 +38,7 @@ class Colaborador extends \yii\db\ActiveRecord
             [['data_foto'], 'safe'],
             [['termos'], 'boolean'],
             [['nome', 'local_foto', 'nome_foto', 'foto'], 'string', 'max' => 50],
-            ['imageFile', 'file', 'extensions' => 'jpg, png, jpeg, gif'],
+            ['img_base64', 'string']
         ];
     }
 
@@ -59,7 +55,7 @@ class Colaborador extends \yii\db\ActiveRecord
             'data_foto' => 'Data Foto',
             'foto' => 'Foto',
             'termos' => 'Termos',
-            'imageFile' => 'Imagem',
+            'img_base64' => 'Imagem',
         ];
     }
 }
