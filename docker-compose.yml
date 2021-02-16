@@ -9,8 +9,10 @@ services:
       - '8080:80'
     depends_on: 
       - db
+    restart: unless-stopped
   db: 
     image: postgres:9.6.20
     environment:
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: varal_aguas
+    restart: unless-stopped
