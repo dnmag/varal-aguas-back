@@ -33,6 +33,7 @@ class ParticipanteController extends ActiveController
                     'Access-Control-Request-Method' => ['POST'],
                     'Access-Control-Allow-Credentials' => false,
                     'Access-Control-Max-Age' => 3600, // Cache (seconds)
+                    'Access-Control-Allow-Headers' => ['*'],
                 ],
             ],
         ]);
